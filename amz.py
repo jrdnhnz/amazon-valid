@@ -22,7 +22,7 @@ def doCheck(email):
         if 'location' in getRedirURI.headers:
             redirURI = getRedirURI.headers['location'].replace('signin', 'register')
             getToken = sess.get(redirURI, headers={'User-Agent': ua.random})
-            appToken = re.findall('<input type="hidden" name="appActionToken" value="(.*?)"', getToken.text)
+            appToken = re.findall('<input type="hidden" name="appActionToken" value="(.*?)"', getToken.text)[0]
             siteState = re.findall('<input type="hidden" name="siteState" value="(.*?)', getToken.text)[0]
             openid = re.findall('<input type="hidden" name="openid.return_to" value="(.*?)"', getToken.text)[0]
             prevId = re.findall('<input type="hidden" name="prevRID" value="(.*?)"', getToken.text)[0]
