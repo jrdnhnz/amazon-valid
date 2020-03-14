@@ -2,7 +2,7 @@
 # Created By Wibu Heker
 # Powered By Rintod.DEV
 # https://web.facebook.com/wibuheker/
-import requests, re, warnings, sys, argparse
+import requests, re, warnings, argparse
 from termcolor import colored
 from fake_useragent import UserAgent
 from concurrent.futures import ThreadPoolExecutor
